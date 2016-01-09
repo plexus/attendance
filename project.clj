@@ -10,8 +10,8 @@
                  [ring/ring-defaults "0.1.5"]
                  [bk/ring-gzip "0.1.1"]
                  [compojure "1.4.0"]
-                 [org.omcljs/om "1.0.0-alpha28"]
-                 [environ "1.0.1"]]
+                 [environ "1.0.1"]
+                 [reagent "0.6.0-alpha"]]
 
   :plugins [[lein-cljsbuild "1.1.1"]
             [lein-environ "1.0.1"]]

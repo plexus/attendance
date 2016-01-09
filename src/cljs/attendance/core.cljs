@@ -1,18 +1,12 @@
 (ns attendance.core
-  (:require [om.core :as om :include-macros true]
-            [om.dom :as dom :include-macros true]))
+  (:require [reagent.core :as r]))
 
 (enable-console-print!)
 
-(defonce app-state (atom {:text "Hello Chestnut!"}))
+(defonce app-state (r/atom {:text "Hello Chestnut!"}))
 
-(defn root-component [app owner]
-  (reify
-    om/IRender
-    (render [_]
-      (dom/div nil (dom/h1 nil (:text app))))))
+(defn root []
+  [:h1 (:text @app-state)])
 
-(om/root
- root-component
- app-state
- {:target (. js/document (getElementById "app"))})
+(r/render-component [root]
+                    (.-body js/document))
