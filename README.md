@@ -2,6 +2,11 @@
 
 ## Environment
 
+You need a "google service account", see links below. When you create the
+account you get a "client ID" which looks like an email address. You can share
+the spreadsheets you want the app to access with this email, just as if you
+would share access with another person.
+
 * ATTENDANCE_CLIENT_ID: email address of the google service account
 * ATTENDANCE_P12_KEY: base64 encoded P12 key file, no wrapping
 
@@ -89,9 +94,19 @@ lein with-profile -dev,+production uberjar && foreman start
 Now your app is running at
 [http://localhost:5000](http://localhost:5000) in production mode.
 
+## Links
+
+* [Google sheets API docs](https://developers.google.com/google-apps/spreadsheets/)
+
+Regarding Google Service account
+
+* [StackOverflow outlining the process](http://stackoverflow.com/questions/31507989/java-to-google-spreadsheet/31527352#31527352)
+* [Official google instructions for creating an account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount)
+
+
 ## License
 
-Copyright © 2016 FIXME
+Copyright © 2016 Arne Brasseur
 
 Distributed under the Eclipse Public License either version 1.0 or (at
 your option) any later version.
