@@ -7,14 +7,17 @@
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [org.clojure/clojurescript "1.7.228" :scope "provided"]
 
+                 ;; Ring server
                  [ring "1.4.0"]
                  [ring/ring-defaults "0.1.5"]
+                 [ring/ring-json "0.4.0"]
                  [bk/ring-gzip "0.1.1"]
                  [compojure "1.4.0"]
+
+                 ;; Util
                  [environ "1.0.1"]
 
-                 [reagent "0.6.0-alpha"]
-
+                 ;; Google API
                  [org.clojure/tools.cli "0.3.3"]
                  [com.google.gdata/core "1.47.1"]
                  [com.google.api-client/google-api-client "1.20.0"]
@@ -22,7 +25,10 @@
                  [com.google.oauth-client/google-oauth-client "1.15.0-rc"]
                  [com.google.http-client/google-http-client "1.15.0-rc"]
                  [com.google.guava/guava "11.0.2"]
-                 [javax.mail/mail "1.4.5"]]
+                 [javax.mail/mail "1.4.5"]
+
+                 ;; Frontend
+                 [reagent "0.6.0-alpha"]]
 
   :plugins [[lein-cljsbuild "1.1.1"]
             [lein-environ "1.0.1"]]
