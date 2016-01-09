@@ -1,5 +1,15 @@
 # attendance
 
+## Environment
+
+* ATTENDANCE_CLIENT_ID: email address of the google service account
+* ATTENDANCE_P12_KEY: base64 encoded P12 key file, no wrapping
+
+e.g.
+
+```
+export ATTENDANCE_P12_KEY=$(cat ~/my-app.p12 | base64 -w 0)
+```
 
 ## Development
 
