@@ -1,18 +1,20 @@
 (ns attendance.google.sheets
-  (:require [attendance.base64 :as b64]
-            [clojure.java.io :as io]
-            [environ.core :refer [env]])
+  (:require
+   [attendance.base64 :as b64]
+   [clojure.java.io :as io]
+   [environ.core :refer [env]])
   (:import
-    (java.net URL URI)
-    (java.security KeyStore)
-    (java.io ByteArrayInputStream)
-    (java.nio.charset StandardCharsets)
-    (com.google.gdata.data.spreadsheet SpreadsheetFeed CellFeed)
-    (com.google.gdata.client.spreadsheet SpreadsheetService)
-    (com.google.api.client.util SecurityUtils)
-    (com.google.api.client.googleapis.auth.oauth2 GoogleCredential GoogleCredential$Builder)
-    (com.google.api.client.json.jackson2 JacksonFactory)
-    (com.google.api.client.googleapis.javanet GoogleNetHttpTransport)))
+   [java.net URL URI]
+   [java.security KeyStore]
+   [java.io ByteArrayInputStream]
+   [java.nio.charset StandardCharsets]
+   [com.google.gdata.data.spreadsheet SpreadsheetFeed CellFeed]
+   [com.google.gdata.client.spreadsheet SpreadsheetService]
+   [com.google.api.client.util SecurityUtils]
+   [com.google.api.client.googleapis.auth.oauth2
+    GoogleCredential GoogleCredential$Builder]
+   [com.google.api.client.json.jackson2 JacksonFactory]
+   [com.google.api.client.googleapis.javanet GoogleNetHttpTransport]))
 
 (def sheet-feed-url
   (URL. "https://spreadsheets.google.com/feeds/spreadsheets/private/full"))
