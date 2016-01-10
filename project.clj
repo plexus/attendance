@@ -9,10 +9,15 @@
 
                  ;; Ring server
                  [ring "1.4.0"]
+                 [compojure "1.4.0"]
+
                  [ring/ring-defaults "0.1.5"]
                  [ring/ring-json "0.4.0"]
                  [bk/ring-gzip "0.1.1"]
-                 [compojure "1.4.0"]
+
+                 [com.cemerick/friend "0.2.1" :exclusions [org.clojure/core.cache]]
+                 [friend-oauth2 "0.1.3"]
+                 [org.apache.httpcomponents/httpclient "4.3.5"]
 
                  ;; Util
                  [environ "1.0.1"]
@@ -20,12 +25,12 @@
                  ;; Google API
                  [org.clojure/tools.cli "0.3.3"]
                  [com.google.gdata/core "1.47.1"]
-                 [com.google.api-client/google-api-client "1.20.0"]
+                 [com.google.api-client/google-api-client "1.21.0"]
+                 [com.google.oauth-client/google-oauth-client "1.21.0"]
+                 [com.google.http-client/google-http-client "1.21.0"]
                  [com.google.http-client/google-http-client-jackson2 "1.21.0"]
-                 [com.google.oauth-client/google-oauth-client "1.15.0-rc"]
-                 [com.google.http-client/google-http-client "1.15.0-rc"]
                  [com.google.guava/guava "11.0.2"]
-                 [javax.mail/mail "1.4.5"]
+                 [javax.mail/mail "1.4.7"]
 
                  ;; Frontend
                  [reagent "0.6.0-alpha"]]
@@ -50,6 +55,8 @@
   ;; because that's where our development helper functions like (run) and
   ;; (browser-repl) live.
   :repl-options {:init-ns user}
+
+  :env {:home-url "http://localhost:3449"} ;; point to the proper domain in production
 
   :cljsbuild {:builds
               [{:id "app"
@@ -102,8 +109,8 @@
              }
 
   :profiles {:dev
-             {:dependencies [[figwheel "0.5.0-2"]
-                             [figwheel-sidecar "0.5.0-2"]
+             {:dependencies [[figwheel "0.5.0-3"]
+                             [figwheel-sidecar "0.5.0-3"]
                              [com.cemerick/piggieback "0.2.1"]
                              [org.clojure/tools.nrepl "0.2.12"]]
 
