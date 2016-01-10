@@ -1,4 +1,5 @@
-(ns attendance.scratch)
+(ns attendance.scratch
+  (:require [clojure.pprint :refer [pprint]]))
 
 (defn instrument-mw [handler desc]
   (fn [req]
