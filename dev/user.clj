@@ -6,7 +6,7 @@
 
 
 (def http-handler
-  (wrap-reload attendance.server/http-handler))
+  (wrap-reload #'attendance.server/http-handler))
 
 (defn run []
   (figwheel/start-figwheel!))
