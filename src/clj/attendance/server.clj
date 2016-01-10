@@ -7,13 +7,13 @@
             [ring.middleware.json :refer [wrap-json-body wrap-json-response]]
             [environ.core :refer [env]]
             [ring.adapter.jetty :refer [run-jetty]]
-
             [attendance.google.sheets :refer [reflect-spreadsheets]])
   (:gen-class))
 
 (defroutes routes
   (resources "/")
-  (GET "/sheets" _ (reflect-spreadsheets)))
+  (GET "/sheets" _
+    {:body (reflect-spreadsheets)}))
 
 (def http-handler
   (-> routes
