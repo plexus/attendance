@@ -14,6 +14,7 @@
                  [ring/ring-defaults "0.1.5"]
                  [ring/ring-json "0.4.0"]
                  [bk/ring-gzip "0.1.1"]
+                 [ring.middleware.logger "0.5.0"]
 
                  [com.cemerick/friend "0.2.1" :exclusions [org.clojure/core.cache]]
                  [friend-oauth2 "0.1.3"]
@@ -56,7 +57,9 @@
   ;; (browser-repl) live.
   :repl-options {:init-ns user}
 
-  :env {:home-url "http://localhost:3449"} ;; point to the proper domain in production
+  :env {:home-url "https://e3b376e6.ngrok.io"
+        ;;"http://localhost:3449"
+        } ;; point to the proper domain in production
 
   :cljsbuild {:builds
               [{:id "app"

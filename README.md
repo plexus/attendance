@@ -103,6 +103,7 @@ Regarding Google Service account
 * [StackOverflow outlining the process](http://stackoverflow.com/questions/31507989/java-to-google-spreadsheet/31527352#31527352)
 * [Official google instructions for creating an account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount)
 
+Some more info of making oauth2 based requests [in this blog post](http://egao1980.blogspot.de/2014/05/get-user-profile-and-friend-oauth2.html)
 
 ## License
 

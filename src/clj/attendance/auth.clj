@@ -38,10 +38,10 @@
   authenticated with the third party the nominal role of ::user."
   [token]
     {:identity token
-     :roles #{::user}})
+     :roles #{::admin}})
 
 (def friend-config
-  {:allow-anon? false
+  {:allow-anon? true
    :workflows [(oauth2/workflow
                 {:client-config oauth2-client-config
                  :uri-config oauth2-uri-config

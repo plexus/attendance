@@ -1,13 +1,14 @@
 (ns attendance.server
   (:require [clojure.java.io :as io]
 
-            [compojure.core           :refer [GET defroutes]]
+            [compojure.core           :refer [GET ANY POST PUT DELETE defroutes]]
             [compojure.route          :refer [resources]]
-            [ring.middleware.defaults :refer [wrap-defaults api-defaults]]
+            [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
             [ring.middleware.gzip     :refer [wrap-gzip]]
             [ring.middleware.json     :refer [wrap-json-body wrap-json-response]]
+            [ring.middleware.logger   :refer [wrap-with-logger]]
             [ring.adapter.jetty       :refer [run-jetty]]
-            [ring.util.response       :refer [resource-response]]
+            [ring.util.response       :refer [resource-response redirect]]
 
             [cemerick.friend          :as friend]
 
@@ -18,15 +19,14 @@
 
 (defroutes routes
   (GET "/" _
-       (if (friend/authorized? ::admin)
-         (resource-response "index.html")
-         (resource-response "login.html")))
+    {:status 200
+     :headers {"Content-Type" "text/html; charset=utf-8"}
+     :body (io/input-stream (io/resource "public/index.html"))})
   (GET "/sheets" _
-    (if (friend/authorized? ::admin)
-      {:body (reflect-spreadsheets)}
-      {:status 403
-       :body {:error "Not authorized to access this resource"
-              }}))
+    (friend/authorize #{:auth/admin} {:body (reflect-spreadsheets)}))
+  (friend/logout
+   (ANY "/logout" _
+     (redirect "/")))
   (resources "/"))
 
 (def http-handler
@@ -34,7 +34,8 @@
       wrap-json-body
       wrap-json-response
       (friend/authenticate auth/friend-config)
-      (wrap-defaults api-defaults)
+      (wrap-defaults site-defaults)
+      wrap-with-logger
       wrap-gzip))
 
 (defn -main [& [port]]

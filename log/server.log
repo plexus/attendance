@@ -1,0 +1,12 @@
+[2016-01-11 22:43:34,395][DEBUG][org.eclipse.jetty.util.log] Logging to org.slf4j.impl.Log4jLoggerAdapter(org.eclipse.jetty.util.log) via org.eclipse.jetty.util.log.Slf4jLog
+[2016-01-11 22:43:34,397][INFO][org.eclipse.jetty.util.log] Logging initialized @2894ms
+[2016-01-11 22:47:58,453][DEBUG][org.eclipse.jetty.util.log] Logging to org.slf4j.impl.Log4jLoggerAdapter(org.eclipse.jetty.util.log) via org.eclipse.jetty.util.log.Slf4jLog
+[2016-01-11 22:47:58,455][INFO][org.eclipse.jetty.util.log] Logging initialized @2930ms
+[2016-01-11 22:48:56,588][DEBUG][org.eclipse.jetty.util.log] Logging to org.slf4j.impl.Log4jLoggerAdapter(org.eclipse.jetty.util.log) via org.eclipse.jetty.util.log.Slf4jLog
+[2016-01-11 22:48:56,591][INFO][org.eclipse.jetty.util.log] Logging initialized @3251ms
+[2016-01-11 22:51:11,762][DEBUG][org.eclipse.jetty.util.log] Logging to org.slf4j.impl.Log4jLoggerAdapter(org.eclipse.jetty.util.log) via org.eclipse.jetty.util.log.Slf4jLog
+[2016-01-11 22:51:11,764][INFO][org.eclipse.jetty.util.log] Logging initialized @2964ms
+[2016-01-11 22:51:57,721][DEBUG][org.eclipse.jetty.util.log] Logging to org.slf4j.impl.Log4jLoggerAdapter(org.eclipse.jetty.util.log) via org.eclipse.jetty.util.log.Slf4jLog
+[2016-01-11 22:51:57,724][INFO][org.eclipse.jetty.util.log] Logging initialized @3005ms
+[2016-01-11 22:53:40,831][DEBUG][org.eclipse.jetty.util.log] Logging to org.slf4j.impl.Log4jLoggerAdapter(org.eclipse.jetty.util.log) via org.eclipse.jetty.util.log.Slf4jLog
+[2016-01-11 22:53:40,833][INFO][org.eclipse.jetty.util.log] Logging initialized @2959ms
